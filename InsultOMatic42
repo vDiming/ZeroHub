@@ -1,0 +1,235 @@
+-- not mine lol xd https://robloxscripts.com/roblox-insult-o-matic-v2-auto-insult-generator-script/
+local starterGui = game:GetService('StarterGui');
+local replicatedStorage = game:GetService('ReplicatedStorage');
+
+local insults = {
+    'your trash',--1
+    'dogwater',--2
+    'ez bad',-- 3
+    'your so balon i had to make a whole new word to describe you',--4
+    'your so garbage the trash can runs away from you',--5
+    'your so bad kid get good',--6
+    'your so bad you failed the bonus round',--7
+    'your so stupid even cavemen said some \"confused oooga booga?\"',--8
+    'did you learn to play from wikihow? explains alot!',--9
+    'your so ugly when you use face scan on your phone it said humans only',--10
+    'im way better than you kid',--11
+    'your device is the definition of a dumpster fire',--12
+    'you wear meme tshirts at parties unironically',--13
+    'you eat boneless wings instead of traditional',--14
+    'bro you built like a \"Super Idol de xi\195\160or\195\179ng\". your trash dog water kid. get good on your windows 1 pc',--15
+    'your so substandard you loser',--16
+    'Your so poor you dirty clown',--17
+    'your inferior to me you peasant',--18
+    'your such a second-rate person',--19
+    'your a second-class person you garbage can', --20
+    'your whole life is unsatisfactory',--21
+    'your so stupid and inadequate',--22
+    'your stupidity is unacceptable',--23
+    'your brain is not up to scratch',--24
+    'your an not up to par loser',--25
+    'your deficient of intelligence',--26
+    'your lack of intelligence is unpleasant',--27
+    'you being smart is the most disagreeable thing i have ever heard',--28
+    'you are very unwelcome here. only people with brains are allowed here',--29
+    'you existing is very unfortunate',--30
+    'talking to you is very unfavorable',--31
+    'your mom was unlucky when she was born with you',--32
+    'your an adverse piece of trash',--33
+    'your brain is rotten and nasty',--34
+    'your skills are so terrible they are not even classifed as \"skills\"',--35
+    'looking at you is dreadful',--36
+    'your awful at this game kid',--37
+    'your skills are so grim you cant even kill a dead person',--38
+    'even a blind person can see how bad you are',--39
+    'you built like a green m&m',--40
+    'you existing is very regrettable',--41
+    'your face is almost as rubbish as your skills and lets not even get started on your mom and i would talk about your dad but hes getting milk',--42
+    'your skills are laughable',--43
+    'go outside lousy woeful hopeless bum',--44
+    'your inspired by those cat posters that say \"the power comes from within\"',--45
+    'your useless you sorry worthless clown. go back to the circus if they even want you',--46
+    'man your built like a \"LeGo 75257 sTaR WaRs mIlLeNnIuM FaLcOn\"',--47
+    'you make the island boys look like the goat compared to you',--48
+    'if people are weaker in their dreams then it seems like you havent woken up yet',--49
+    'your skull is more hollow than those chocolate easter bunnys',--50
+    'your skills stopped growing with your brain',--51
+    'your built like a \240\159\151\191\240\159\151\191\240\159\151\191\240\159\151\191',--52
+    'i bet you still do the whip and nae nae',--53
+    'if the rock is strong then your the soft',--54
+    'can you stop being so trash. mans took lessons from the garbage collector',--55
+    'i think you forgot to do something. Oh Yeah its to be stupid somewhere else',--56
+    'you built like a rolly polly',--57
+    'your outfit would go hard if i was blind',--58
+    'your dogwater kid get a life and go touch grass if you even know how wit yo decomposin brain',--59
+    'you probably got your computer from wish. and got your clothes in a ditch',--60
+    'it took me ten seconds to notice im not talking to a trash can. im talking to an entire dump',--61
+    'you laugh at minion memes',--62
+    'you play idle games and act like your a god at any game',--63
+    'you go to the gym just for the free water',--64
+    'top 10 most ugly people. number 1 in infront of me',--65
+    'if you look in your mirror you will see a clown',--66
+    'you laugh at among us',--67
+    'you built like a beep beep boo boo beep bop',--68
+    'when you look in the mirror you dont see anything because it already broke',--69
+    'you so stupid you cant even understand me',--70
+    'You better shut yo  decomposin overloadin unimposin salty ocean head up',--71
+    'Shut yo insane candy cane airplane southern spain profane great plains water main bathtub drain propane net gain grease stain acid rain great dane lion’s mane no brain head up',--72
+    'Shut yo flashlight laser sight skin tight sun bright spooky fright green kite street fight helicopter flight starry night head up',--73
+    'Shut yo lean mean string bean charlie sheen limousine canteen trampoline serpentine wolverine submarine unclean nectarine broken gene halloween defective spleen smokescreen head up',--74
+    'Shut yo skin tone chicken bone google chrome no home flip phone disowned ice cream cone garden gnome extra chromosome metronome dimmadome head up',--75
+  
+}
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+
+local w = library:CreateWindow("hi welcome to") -- Creates the window
+
+local b = w:CreateFolder("Super Insult o Matic") -- Creates the folder(U will put here your buttons,etc)
+b:Label("GUI EDITION",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    
+}) 
+
+b:Button("click for insult",function()
+    spawn(function()
+local args = {
+    [1] = insults[math.random(1, #insults)],
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local auegh = Instance.new("Sound",game)
+                auegh.Volume = 10
+                auegh.SoundId = "rbxassetid://7145686856"
+                auegh:Play()
+                auegh.Ended:Connect(function()
+                wait()
+                auegh:Destroy()
+   end)
+end)
+end)
+
+b:Bind("Press Key for insult",Enum.KeyCode.P,function() --Default bind
+spawn(function()
+local args = {
+    [1] = insults[math.random(1, #insults)],
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local auegh = Instance.new("Sound",game)
+                auegh.Volume = 10
+                auegh.SoundId = "rbxassetid://7145686856"
+                auegh:Play()
+                auegh.Ended:Connect(function()
+                wait()
+                auegh:Destroy()
+   end)
+end)
+end)
+b:Button("click for GOD insult",function()
+local args = {
+    [1] = "your built like a",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+local hi = Instance.new("Sound")
+hi.Name = "Sound"
+hi.SoundId = "http://www.roblox.com/asset/?id=8248381335"
+hi.Volume = 2
+hi.Looped = false
+hi.archivable = false
+hi.Parent = game.Workspace
+hi:Play()
+wait(0.5)
+local args = {
+   [1] = "Super Idol de xiàoróng",
+   [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(1.5)
+local args = {
+   [1] = "dōu méi nǐ de tián",
+   [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(1.6)
+local args = {
+   [1] = "bā yuè zhèngwǔ de yánguāng",
+   [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(1.6)
+local args = {
+   [1] = "dou mei ni yaoyau",
+   [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(2)
+local args = {
+   [1] = "rè'ài 105 °C de nǐ",
+   [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(3)
+local args = {
+   [1] = "de de qichun de zhēngliúshuǐ",
+   [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end)
+b:Button("click for victory laugh",function() --Default bind
+local args = {
+    [1] = "he he he haw",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local bug = Instance.new("Sound",game)
+                bug.Volume = 10
+                bug.SoundId = "rbxassetid://8043608622"
+                bug:Play()
+                bug.Ended:Connect(function()
+                wait()
+                bug:Destroy()
+end)
+end)
+b:Button("click for victory song",function() --Default bind
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+spawn(function()
+local hug = Instance.new("Sound",game)
+                hug.Volume = 10
+                hug.SoundId = "rbxassetid://4734153610"
+                hug:Play()
+local speaker = game.Players.LocalPlayer
+local Anim = Instance.new("Animation")
+     Anim.AnimationId = "rbxassetid://27432686"
+     local bruh = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+bruh:Play()
+bruh:AdjustSpeed(10)
+hug:Play()
+                hug.Ended:Connect(function()
+                wait()
+                hug:Destroy()
+end)
+end)
+else
+spawn(function()
+local hug = Instance.new("Sound",game)
+                hug.Volume = 10
+                hug.SoundId = "rbxassetid://4734153610"
+local speaker = game.Players.LocalPlayer
+local Anim = Instance.new("Animation")
+     Anim.AnimationId = "rbxassetid://507776043"
+     local bruh = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+bruh:Play()
+bruh:AdjustSpeed(10)
+hug:Play()
+hug.Ended:Connect(function()
+                hug:Destroy()
+end)
+end)
+end
+end)
