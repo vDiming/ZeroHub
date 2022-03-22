@@ -1,0 +1,9 @@
+--Infinite money
+game:GetService("ReplicatedStorage").BuyDoor:FireServer("Forest", -9.9999999999999999e20)
+game:GetService("ReplicatedStorage").BuyDoor:FireServer("Secret", -9.9999999999999999e20)
+game:GetService("ReplicatedStorage").BuyDoor:FireServer("TheFantasyStart", -9.9999999999999999e20)
+
+--Get on Leaderboards
+game:GetService("ReplicatedStorage").BuyDoor:FireServer("Forest", -1.6e308)
+game:GetService("ReplicatedStorage").BuyDoor:FireServer("Secret", -1.6e308)
+game:GetService("ReplicatedStorage").BuyDoor:FireServer("TheFantasyStart", -1.6e308)
